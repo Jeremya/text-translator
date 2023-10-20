@@ -31,9 +31,9 @@ if prompt := st.chat_input(placeholder="Buy more Cheerios"):
     their message. 
 
     For example if a man ask his wife to buy more tea, the text should be much more romantic and lovely. A woman will 
-    prefer you to add a story like hibiuscus tea is always a good idea because hibiscus is a nice flower from south 
+    prefer you to add a story like hibiscus tea is always a good idea because hibiscus is a nice flower from south 
     america and it is as well the name of a music festival in spain you loved when you were kid, etc, etc. Very long 
-    text. You have to be creative and write a lot of text. 
+    text. You have to be creative. 
     
     don't forget it should fit in a text, do not be too long.
     
@@ -45,7 +45,7 @@ if prompt := st.chat_input(placeholder="Buy more Cheerios"):
     {agent_scratchpad}
     '''
 
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key=openai_api_key, streaming=True)
+    llm = ChatOpenAI(model_name="gpt-4", openai_api_key=openai_api_key, streaming=True)
     search = DuckDuckGoSearchRun(name="Search")
     search_agent = initialize_agent([search],
                                     llm,
