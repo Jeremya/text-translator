@@ -9,7 +9,7 @@ from langchain.tools import DuckDuckGoSearchRun
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
 
-st.title("💬 Text Translator")
+st.title("💬 Text Translator For Men")
 st.caption("🚀 A powerful AI to understand your partner's language")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "What would you like to say to your sweet partner?"}]
@@ -41,6 +41,7 @@ if prompt := st.chat_input(placeholder="Buy more Cheerios"):
     
     The text I recommend for your loved-one is...
     Instructions: {input}
+    {agent_scratchpad}
     '''
 
     llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key=openai_api_key, streaming=True)
